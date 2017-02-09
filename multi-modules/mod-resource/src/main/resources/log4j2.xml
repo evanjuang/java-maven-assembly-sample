@@ -1,0 +1,22 @@
+<Configuration>
+    <Properties>
+        <Property name="LOG_HOME">./logs</Property>>
+    </Properties>
+    <Appenders>
+        <RollingFile name="file" fileName="${LOG_HOME}/test.log" filePattern="${LOG_HOME}/test-%d{yyyy-MM-dd}.%i.log">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}][%5.5p] %-22c{1} %-2X{TId}- %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 KB"/>
+            </Policies>
+        </RollingFile>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{[%d{yyyy-MM-dd HH:mm:ss}][%5.5p] %-22c{1} %-2X{TId}- %m%n}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>
