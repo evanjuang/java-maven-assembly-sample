@@ -6,7 +6,7 @@ APP_HOME=$(cd $(dirname $0); cd ..; pwd -P)
 # Project Information
 ARTIFACT_ID=sample-app
 VERSION=0.1
-MAIN_CLASS=com.inventec.test.StartApp
+MAIN_CLASS=com.evan.test.StartApp
 
 # Set entry
 MAIN_JAR_DIR=lib
